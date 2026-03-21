@@ -1,209 +1,164 @@
-## Zadanie — o čo ide
-Tu je príklad zo strednej školy, kde v zadaní bolo :
-* zašifrovaný text
-* tabuľku s frekvenciou jednotlivých písmen
-Základná otázka je či by bolo by možné dešifrovať ten text iba s frekvenčnou tabuľkou pre jednotlivé znaky, bez použitia bigramov a trigramov?
+# Substitution Cipher Decryption — `decrypt.py`
 
-Riešenie iba z frekvenčnou tabuľkou na jednotlivé znaky nie je moc možné ako samostatný algoritmus. Áno, bolo by to možné — ale s dôležitým "ale".
-
-**Samotná frekvenčná tabuľka nestačí na automatické dešifrovanie.** Dá sa ňou získať len **počiatočný odhad** mapovania (zoradí písmená šifrovaného textu podľa frekvencie a priradíš ich k písmenám referenčného jazyka). Problém je, že frekvencie mnohých písmen sú si veľmi blízke — napríklad `s`, `n`, `r`, `t`, `i` sú vo francúzštine všetky medzi 6–8 %, takže poradie nie je spoľahlivé a počiatočný odhad bude mať niekoľko zámien.
-
-**Čo teda stredoškoláci v skutočnosti robili?** Frekvenčná tabuľka dáva len odrazový mostík — zorientovanie sa. Potom **manuálne skúšanie** a opravovanie: pozreť sa na čiastočne dešifrovaný text, uhádnuť konkrétne slovo podľa kontextu (napr. `_e` → `le`, trojpísmenové slovo s vysokou frekvenciou → `les` alebo `des`), a postupne opravovať mapovanie. To je práve tá "ručná" kryptoanalýza — kombinácia štatistiky a jazykového úsudku.
-
-**Algoritmus bez bigramov by teda musel robiť to isté** — iba frekvenčné zoradenie dá skóre, podľa ktorého nevieme povedať či je výsledok správny alebo nie. Bigramy a trigramy sú v podstate *automatizácia toho jazykového úsudku* — nahrádzajú "aha, toto vyzerá ako francúzske slovo" matematickým skóre.
-
-Takže záver: na strednej škole to bolo **možné preto, lebo to robil človek** s jazykovou intuíciou. Pre počítačový algoritmus bez bigramov by frekvenčná tabuľka nestačila — skončil by v lokálnom optime bez schopnosti rozpoznať, či sa blíži k správnemu riešeniu.
-
-# Dešifrovanie substitučnej šifry — `decrypt.py`
-
-Program automaticky dešifruje text zašifrovaný **jednoduchou substitučnou šifrou**
-(monoalfabetická substitúcia), kde každé písmeno abecedy bolo nahradené iným písmenom.
-Využíva kombináciu frekvenčnej analýzy a simulovaného žíhania.
+🇸🇰 [Slovensky](README.sk.md) | 🇬🇧 English | 🇫🇷 [Français](README.fr.md)
 
 ---
 
-## Substitučná šifra — o čo ide
+## Background — What Is This About?
 
-V substitučnej šifre existuje tajný **kľúč** — tabuľka 26 dvojíc, ktorá hovorí,
-ktoré písmeno sa zašifruje ako ktoré. Napríklad:
+A classic high school exercise: given a ciphertext and a table of letter frequencies, can it be decrypted using only single-character frequencies — without bigrams or trigrams?
+
+The short answer: **not automatically**. A frequency table alone gives only a rough initial guess. Many letters share similar frequencies (e.g. `s`, `n`, `r`, `t`, `i` in French all fall between 6–8 %), so the ordering is unreliable. What students actually did was combine the frequency hint with manual trial-and-error and linguistic intuition — guessing words from partial context. Bigrams and trigrams automate exactly that intuition.
+
+This program replicates that process algorithmically, using **frequency analysis** combined with **simulated annealing**.
+
+---
+
+## What Is a Substitution Cipher?
+
+A substitution cipher uses a secret **key** — a table of 26 pairs mapping each plaintext letter to a ciphertext letter:
 
 ```
 plaintext:  a b c d e f g ...
 ciphertext: r x k o f p q ...
 ```
 
-Každé `a` v pôvodnom texte sa nahradí `r`, každé `b` sa nahradí `x` atď.
-Výsledný zašifrovaný text pôsobí ako náhodný zmätok, ale **zachováva štatistické
-vlastnosti pôvodného jazyka** — niektoré písmená sa stále vyskytujú častejšie ako iné.
-Práve to umožňuje šifru prelomiť bez znalosti kľúča.
+Every `a` becomes `r`, every `b` becomes `x`, etc. The result looks random, but it **preserves the statistical properties of the original language** — some letters still appear more often than others. That is exactly what allows breaking the cipher without knowing the key.
 
 ---
 
-## Súbory projektu
+## Project Files
 
-| Súbor | Popis |
+| File | Description |
 |---|---|
-| `decrypt.py` | Hlavný skript |
-| `crypt.txt` | Zašifrovaný vstupný text |
-| `french_character_frequencies.csv` | Frekvencia jednotlivých písmen vo francúzštine |
-| `french_bigram_frequencies.csv` | Frekvencia dvojíc písmen (bigramov) vo francúzštine |
-| `french_trigram_frequencies.csv` | Frekvencia trojíc písmen (trigramov) vo francúzštine |
-| `stat.csv` | Alternatívny zdroj frekvencií písmen (pôvodný formát `znak;frekvencia`) |
-| `preklady/` | Adresár, do ktorého sa ukladajú výsledky (vytvorí sa automaticky) |
+| `decrypt.py` | Main script |
+| `crypt.txt` | Encrypted input text |
+| `french_character_frequencies.csv` | French single-letter frequencies |
+| `french_bigram_frequencies.csv` | French bigram frequencies |
+| `french_trigram_frequencies.csv` | French trigram frequencies |
+| `stat.csv` | Alternative frequency source (format: `char;frequency`) |
+| `preklady/` | Output directory for results (created automatically) |
 
-Frekvenčné tabuľky pochádzajú z [sttmedia.com](https://www.sttmedia.com/characterfrequency-french).
+Frequency tables sourced from [sttmedia.com](https://www.sttmedia.com/characterfrequency-french).
 
 ---
 
-## Ako spustiť
+## How to Run
 
 ```bash
 python3 decrypt.py
 ```
 
-Všetky vstupné súbory musia byť v rovnakom adresári ako skript.
-Výsledok sa vypíše na konzolu a zároveň uloží do `preklady/preklad_YYYYMMDD_HHMMSS.txt`.
+All input files must be in the same directory as the script.
+The result is printed to the console and saved to `preklady/preklad_YYYYMMDD_HHMMSS.txt`.
 
 ---
 
-## Logika algoritmu — krok za krokom
+## Algorithm — Step by Step
 
-### Krok 1 — Frekvenčná analýza (počiatočný odhad)
+### Step 1 — Frequency Analysis (Initial Guess)
 
-Funkcia `generate_frequency_mapping()`
+`generate_frequency_mapping()`
 
-Algoritmus si najprv spočíta, ako často sa vyskytuje každé písmeno
-v zašifrovanom texte, a výsledok zoradí od najčastejšieho po najmenej časté.
-To isté urobí s referenčnou tabuľkou francúzskych frekvencií.
-Potom jednoducho zarovná obe zoradenia — najčastejšie šifrované písmeno
-priradí k najčastejšiemu francúzskemu písmenu atď.
+Letter frequencies in the ciphertext are computed and sorted from most to least frequent. The same is done for the French reference table. The two sorted lists are aligned — the most frequent cipher letter is mapped to the most frequent French letter, and so on.
 
 ```
-šifra (podľa frekvencie): r  s  h  f  e  n  ...
-francúzština (ref):        e  a  s  t  i  r  ...
-→ počiatočné mapovanie:    r→e, s→a, h→s, f→t, ...
+cipher (by freq):  r  s  h  f  e  n  ...
+French (ref):      e  a  s  t  i  r  ...
+→ initial mapping: r→e, s→a, h→s, f→t, ...
 ```
 
-Toto mapovanie je len **hrubý odhad** — mnohé písmená s podobnou frekvenciou
-budú priradené nesprávne. Slúži ale ako dobrý štartovací bod pre ďalšiu optimalizáciu.
-Zvyšné písmená, ktoré sa v texte vôbec nevyskytli, sa dopĺňajú náhodne.
+This is only a **rough estimate** — letters with similar frequencies will often be misassigned. It serves as a starting point for the next stage. Letters absent from the ciphertext are filled in randomly.
 
 ---
 
-### Krok 2 — Hodnotenie kvality (scoring)
+### Step 2 — Scoring
 
-Funkcia `score_text()`
+`score_text()`
 
-Aby algoritmus vedel, či je nejaké mapovanie dobré alebo zlé, potrebuje spôsob,
-ako ohodnotiť dešifrovaný text. Používa na to **log-pravdepodobnosť n-gramov**.
+To evaluate a mapping, the algorithm scores the decrypted text using **log-probability of n-grams**.
 
-**Bigram** je dvojica susedných písmen (napr. `le`, `en`, `es`).
-**Trigram** je trojica (napr. `ent`, `que`, `les`).
-Pre každý jazyk existujú charakteristické bigramy a trigramy — vo francúzštine
-je napríklad `le` veľmi časté (2.6 %), zatiaľ čo `xq` sa prakticky nevyskytuje.
+A **bigram** is a pair of adjacent letters (e.g. `le`, `en`, `es`). A **trigram** is a triple (e.g. `ent`, `que`, `les`). Each language has characteristic n-grams — in French, `le` is very common (~2.6 %), while `xq` is virtually absent.
 
-Pre každý bigram a trigram v dešifrovanom texte sa vyhľadá jeho frekvencia
-v referenčnej tabuľke a vypočíta sa prirodzený logaritmus. Všetky hodnoty
-sa sčítajú do jedného skóre:
+For each bigram and trigram in the decrypted text, the algorithm looks up its reference frequency and takes the natural logarithm. All values are summed:
 
 ```
-skóre = Σ w_bi · log(P(bigram)) + Σ w_tri · log(P(trigram))
+score = Σ w_bi · log(P(bigram)) + Σ w_tri · log(P(trigram))
 ```
 
-Trigramy majú dvojnásobnú váhu (`w_tri = 2.0`), pretože nesú viac informácie
-o štruktúre jazyka. Čím vyššie (menej záporné) skóre, tým viac text
-pripomína prirodzený francúzsky jazyk. Neznáme n-gramy dostanú malú
-penalizačnú hodnotu `1e-9` namiesto nuly (kvôli logaritmu).
+Trigrams carry double weight (`w_tri = 2.0`) because they encode more structural information. Unknown n-grams receive a small penalty `1e-9` instead of zero (to avoid log(0)). A higher (less negative) score means the text more closely resembles natural French.
 
 ---
 
-### Krok 3 — Simulované žíhanie (optimalizácia)
+### Step 3 — Simulated Annealing (Optimisation)
 
-Funkcia `simulated_annealing()`
+`simulated_annealing()`
 
-Toto je jadro celého algoritmu. Cieľom je nájsť také mapovanie 26 písmen,
-ktoré dá najvyššie skóre. Problém je, že existuje `26! ≈ 4 × 10²⁶` možných
-mapovaní — prehľadanie všetkých je nemožné.
+The goal is to find the 26-letter mapping with the highest score. The search space has `26! ≈ 4 × 10²⁶` possibilities — exhaustive search is impossible.
 
-Algoritmus sa inšpiruje fyzikálnym procesom **žíhania kovov**: kov sa zahreje
-na vysokú teplotu a postupne ochladzuje. Pri vysokej teplote sa atómy pohybujú
-náhodne a môžu opustiť nevýhodné usporiadanie; pri nízkej teplote sa usadia
-v stabilnom (ideálne globálne optimálnom) stave.
+The algorithm is inspired by the physical process of **annealing metals**: a metal is heated to a high temperature and slowly cooled. At high temperature, atoms move freely and can escape unfavourable arrangements; at low temperature, they settle into a stable (ideally globally optimal) state.
 
-V každom kroku algoritmus:
+At each step:
 
-1. Náhodne **vymení dve písmená** v aktuálnom mapovaní (napr. prehodí `r→e` a `s→a` na `r→a` a `s→e`)
-2. Ohodnotí nové mapovanie pomocou `score_text()`
-3. Ak je nové mapovanie **lepšie** — prijme ho vždy
-4. Ak je nové mapovanie **horšie** — prijme ho s pravdepodobnosťou `exp(Δ/T)`
+1. Randomly **swap two letters** in the current mapping
+2. Score the new mapping with `score_text()`
+3. If the new mapping is **better** — always accept it
+4. If the new mapping is **worse** — accept it with probability `exp(Δ/T)`
 
-Pravdepodobnosť prijatia horšieho riešenia závisí od **teploty T**, ktorá
-sa exponenciálne znižuje počas behu:
+The probability of accepting a worse solution depends on **temperature T**, which decreases exponentially:
 
 ```
 T(i) = T_start · (T_end / T_start)^(i / iterations)
 ```
 
-Na začiatku (vysoká T) sa prijímajú aj výrazne horšie riešenia — algoritmus
-„blúdi" po priestore riešení a hľadá sľubné oblasti. Na konci (nízka T)
-sa správa takmer ako hill-climbing a dolaďuje detaily.
-
-Toto je kľúčová výhoda oproti jednoduchému hill-climbingu: **schopnosť
-uniknúť z lokálnych optím**.
+At high T, even much worse solutions are accepted — the algorithm explores broadly. At low T, it behaves like hill-climbing and refines the details. This is the key advantage over plain hill-climbing: **the ability to escape local optima**.
 
 ---
 
-### Krok 4 — Viacero nezávislých pokusov (reštarty)
+### Step 4 — Multiple Restarts
 
-Hlavný blok `__main__`
+`__main__`
 
-Simulované žíhanie nie je deterministické — pri každom spustení môže
-skončiť na inom riešení. Preto sa celý proces opakuje `NUM_RESTARTS = 20`-krát,
-vždy s novým náhodným počiatočným mapovaním. Z všetkých pokusov sa uchováva
-len ten s **najvyšším skóre**.
+Simulated annealing is non-deterministic — each run may end at a different solution. The entire process is therefore repeated `NUM_RESTARTS = 20` times, each with a fresh random starting mapping. Only the result with the **highest score** is kept.
 
-Viacero reštartov výrazne zvyšuje pravdepodobnosť, že aspoň jeden pokus
-nájde globálne (alebo blízke globálnemu) optimum.
+Multiple restarts significantly increase the probability that at least one run finds the global (or near-global) optimum.
 
 ---
 
-### Krok 5 — Uloženie výsledku
+### Step 5 — Saving the Result
 
-Po skončení všetkých pokusov sa najlepší dešifrovaný text:
-- vypíše na konzolu
-- uloží do súboru `preklady/preklad_YYYYMMDD_HHMMSS.txt` vedľa skriptu
+The best decrypted text is:
+- printed to the console
+- saved to `preklady/preklad_YYYYMMDD_HHMMSS.txt`
 
-Časová pečiatka v názve súboru zaručuje, že každé spustenie vytvorí
-**jedinečný súbor** a neprepíše predchádzajúce výsledky.
+The timestamp in the filename ensures every run produces a **unique file** without overwriting previous results.
 
 ---
 
-## Prehľad funkcií
+## Function Reference
 
-| Funkcia | Popis |
+| Function | Description |
 |---|---|
-| `load_char_stats(filepath)` | Načíta frekvencie písmen z CSV; podporuje formát `;` aj `,` |
-| `load_ngram_stats(filepath)` | Načíta bigram/trigram frekvencie z CSV; ignoruje akcentované znaky |
-| `get_cipher_text(filepath)` | Načíta zašifrovaný text zo súboru |
-| `get_text_freqs(text)` | Spočíta percentuálne frekvencie písmen v texte |
-| `decrypt_text(text, mapping)` | Aplikuje mapovanie na text, zachováva veľkosť písmen |
-| `score_text(text, bigrams, trigrams)` | Ohodnotí text log-pravdepodobnosťou bigramov a trigramov |
-| `generate_frequency_mapping(cipher_text, ref_stats)` | Vytvorí počiatočné mapovanie podľa frekvenčnej analýzy |
-| `simulated_annealing(...)` | Optimalizuje mapovanie pomocou simulovaného žíhania |
+| `load_char_stats(filepath)` | Loads letter frequencies from CSV; supports `;` and `,` separators |
+| `load_ngram_stats(filepath)` | Loads bigram/trigram frequencies; skips accented characters |
+| `get_cipher_text(filepath)` | Reads the ciphertext from file |
+| `get_text_freqs(text)` | Computes percentage letter frequencies in a text |
+| `decrypt_text(text, mapping)` | Applies a mapping to text, preserving case |
+| `score_text(text, bigrams, trigrams)` | Scores text by log-probability of bigrams and trigrams |
+| `generate_frequency_mapping(...)` | Creates initial mapping from frequency analysis |
+| `simulated_annealing(...)` | Optimises the mapping using simulated annealing |
 
 ---
 
-## Nastaviteľné parametre
+## Tunable Parameters
 
-V hlavnom bloku skriptu možno upraviť:
-
-| Parameter | Predvolená hodnota | Popis |
+| Parameter | Default | Description |
 |---|---|---|
-| `NUM_RESTARTS` | `20` | Počet nezávislých pokusov |
-| `ITERATIONS` | `40000` | Počet krokov simulovaného žíhania na jeden pokus |
-| `T_start` | `5.0` | Počiatočná teplota žíhania |
-| `T_end` | `0.005` | Záverečná teplota žíhania |
-| `w_bi` | `1.0` | Váha bigramov v scoring funkcii |
-| `w_tri` | `2.0` | Váha trigramov v scoring funkcii |
+| `NUM_RESTARTS` | `20` | Number of independent runs |
+| `ITERATIONS` | `40000` | Steps per annealing run |
+| `T_start` | `5.0` | Initial annealing temperature |
+| `T_end` | `0.005` | Final annealing temperature |
+| `w_bi` | `1.0` | Bigram weight in scoring |
+| `w_tri` | `2.0` | Trigram weight in scoring |
 
-Zvýšenie `NUM_RESTARTS` alebo `ITERATIONS` zlepší kvalitu výsledku na úkor času behu.
+Increasing `NUM_RESTARTS` or `ITERATIONS` improves result quality at the cost of runtime.
