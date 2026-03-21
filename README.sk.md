@@ -65,7 +65,7 @@ Výsledok sa vypíše na konzolu a uloží do `preklady/preklad_Rev2_YYYYMMDD_HH
 
 ## Logika algoritmu — krok za krokom
 
-### Krok 0 — Detekcia Caesarovej šifry (predkontorla)
+### Krok 0 — Detekcia Caesarovej šifry (predkontrola)
 
 `try_caesar()`
 
