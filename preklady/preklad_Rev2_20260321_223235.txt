@@ -1,0 +1,39 @@
+Souvent sul ra montajne, x r’omkle du vieux chhne,
+Au couchel du soreir, tlistement pe m’ausieds ;
+Pe blomene au haswld mes lejalds sul ra braine,
+Dont re takreau chanjeant se deloure x mes bieds.
+Ici jlonde re greuve aux vajues ecumantes ;
+Ir selbnnte, et s’engonce en un rointain okscul ;
+Ra re rac imxoire et end ses eaux delmantes
+Ou r’etoire du soil se reve dans r’aful.
+Au sommet de ces monts coulonnes de kois somkles,
+Re clebuscure encol pette un delniel layon ;
+Et re chal vaboleux de ra leine des omkles
+Monte, et krancit depa res kolds de r’holifon.
+Cebendanet, s’eranant de ra greche jothique,
+Un son lerijieux se leband dans res ails ;
+Re voyajeul s’allete, et ra crochel lustique
+Aux delniels kluits du poul mere de saints woncelts.
+Mais a ces doux takreaux mon ame indigglente
+N’eblouve depant eux ni chalma ni tlansblts ;
+Pe contembre ra telle ainsi qu’une omkle ellante
+Re soreir des vivants n’echaugge brus res molts.
+De corrine en corrine en vain boltant ma vue,
+Du sud a r’aquiron, de r’aulole au couchant,
+Pe balcouls tous res bxints de r’immense etendue,
+Et pe dis : Nuure bolt re konhesl ne m’attnd.
+
+---
+Parametre behu
+--------------
+Datum a cas:       2026-03-21 22:32:35
+Metoda:            SA pokus 23
+Vstupny subor:     crypt.txt
+Frekvencny subor:  french_character_frequencies.csv
+Caesar posun:      13
+Caesar skore:      -52119.8
+Pocet restartov:   30
+Iteracie/restart:  70000
+T_start:           5.0
+T_end:             0.0005
+Finalne skore:     -45389.9

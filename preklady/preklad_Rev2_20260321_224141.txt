@@ -1,0 +1,39 @@
+Souvent sul ra montagne, x r’omzle du vieux chhne,
+Au couchel du soreir, tlistement pe m’ausieds ;
+Pe klomene au hasfld mes legalds sul ra kraine,
+Dont re tazreau changeant se deloure x mes kieds.
+Ici glonde re wreuve aux vagues ecumantes ;
+Ir selknnte, et s’enwonce en un rointain ozscul ;
+Ra re rac imxoire et end ses eaux delmantes
+Ou r’etoire du soil se reve dans r’ajul.
+Au sommet de ces monts coulonnes de zois somzles,
+Re clekuscure encol pette un delniel labon ;
+Et re chal vakoleux de ra leine des omzles
+Monte, et zrancit depa res zolds de r’holijon.
+Cekendanet, s’eranant de ra wreche gothique,
+Un son lerigieux se lekand dans res ails ;
+Re vobageul s’allete, et ra crochel lustique
+Aux delniels zluits du poul mere de saints foncelts.
+Mais a ces doux tazreaux mon ame indiwwlente
+N’eklouve depant eux ni chalma ni tlansklts ;
+Pe contemkre ra telle ainsi qu’une omzle ellante
+Re soreir des vivants n’echauwwe krus res molts.
+De corrine en corrine en vain koltant ma vue,
+Du sud a r’aquiron, de r’aulole au couchant,
+Pe kalcouls tous res kxints de r’immense etendue,
+Et pe dis : Nuure kolt re zonhesl ne m’attnd.
+
+---
+Parametre behu
+--------------
+Datum a cas:       2026-03-21 22:41:41
+Metoda:            SA pokus 30
+Vstupny subor:     crypt.txt
+Frekvencny subor:  french_character_frequencies.csv
+Caesar posun:      13
+Caesar skore:      -52119.8
+Pocet restartov:   40
+Iteracie/restart:  80000
+T_start:           5.0
+T_end:             0.0005
+Finalne skore:     -45389.9

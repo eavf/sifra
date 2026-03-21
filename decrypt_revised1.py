@@ -47,6 +47,8 @@ def load_stats(filepath):
                         continue
     except FileNotFoundError:
         print(f"Varovanie: subor '{filepath}' nebol najdeny.")
+
+    print(f"Nacitane hodnoty stat:'{stats}'.")
     return stats
 
 
@@ -166,7 +168,16 @@ def simulated_annealing(cipher_text, initial_map, iterations=40000,
     return decrypt_text(cipher_text, best_map), best_score, best_map
 
 
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 if __name__ == "__main__":
+    # Skript ocakava tieto subory v rovnakom adresari:
+    #   crypt.txt                        - zasifrovany text
+    #   stat.csv                         - jednoznakove frekvencie (Zadanie prikladu)
+
+
     cipher_text = get_cipher_text('crypt.txt')
     ref_stats = load_stats('stat.csv')
 
@@ -176,8 +187,8 @@ if __name__ == "__main__":
     best_text = ""
     best_map = {}
 
-    NUM_RESTARTS = 20       # pocet nezavislych pokusov
-    ITERATIONS = 40000      # iteracie na jeden pokus
+    NUM_RESTARTS = 30       # pocet nezavislych pokusov
+    ITERATIONS = 60000      # iteracie na jeden pokus
 
     for attempt in range(NUM_RESTARTS):
         init_map = generate_frequency_mapping(cipher_text, ref_stats)
@@ -196,16 +207,34 @@ if __name__ == "__main__":
     print(best_text)
     print(f"\nFinalne skore: {best_score:.1f}")
 
-# Uloz preklad do adresara 'preklady' vedla skriptu, s jedinecnym nazvom suboru
-script_dir = os.path.dirname(os.path.abspath(__file__))
-output_dir = os.path.join(script_dir, "preklady")
-os.makedirs(output_dir, exist_ok=True)
+    # Uloz preklad do adresara 'preklady' vedla skriptu, s jedinecnym nazvom suboru
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = os.path.join(script_dir, "preklady")
+    os.makedirs(output_dir, exist_ok=True)
  
-from datetime import datetime
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-output_path = os.path.join(output_dir, f"preklad_Rev1_{timestamp}.txt")
+    from datetime import datetime
+    now = datetime.now()
+    timestamp = now.strftime("%Y%m%d_%H%M%S")
+    output_path = os.path.join(output_dir, f"preklad_Rev1_{timestamp}.txt")
  
-with open(output_path, 'w', encoding='utf-8') as f:
-    f.write(best_text)
+    params_block = f"""
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       {now.strftime("%Y-%m-%d %H:%M:%S")}
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  stat.csv
+        Pocet restartov:   {NUM_RESTARTS}
+        Iteracie/restart:  {ITERATIONS}
+        Celkom iteracii:   {NUM_RESTARTS * ITERATIONS}
+        T_start:           {5.0}
+        T_end:             {0.005}
+        Finalne skore:     {best_score:.1f}
+        Stats:             {ref_stats}
+        """
  
-print(f"\nPreklad ulozeny do: {output_path}")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(best_text)
+        f.write(params_block)
+ 
+    print(f"\nPreklad ulozeny do: {output_path}")

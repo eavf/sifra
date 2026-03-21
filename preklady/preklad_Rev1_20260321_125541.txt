@@ -1,0 +1,40 @@
+Souvent sur la montayne, x l’ombre du vieux chhne,
+Au coucher du soleil, tristement ge m’ausieds ;
+Ge promene au haswrd mes reyards sur la plaine,
+Dont le tableau chanyeant se deroule x mes pieds.
+Ici yronde le fleuve aux vayues ecumantes ;
+Il serpnnte, et s’enfonce en un lointain obscur ;
+La le lac imxoile et end ses eaux dermantes
+Ou l’etoile du soir se leve dans l’azur.
+Au sommet de ces monts couronnes de bois sombres,
+Le crepuscule encor gette un dernier rajon ;
+Et le char vaporeux de la reine des ombres
+Monte, et blancit dega les bords de l’horizon.
+Cependanet, s’elanant de la fleche yothique,
+Un son reliyieux se repand dans les airs ;
+Le vojayeur s’arrete, et la clocher rustique
+Aux derniers bruits du gour mele de saints woncerts.
+Mais a ces doux tableaux mon ame indiffrente
+N’eprouve degant eux ni charma ni transprts ;
+Ge contemple la terre ainsi qu’une ombre errante
+Le soleil des vivants n’echauffe plus les morts.
+De colline en colline en vain portant ma vue,
+Du sud a l’aquilon, de l’aurore au couchant,
+Ge parcours tous les pxints de l’immense etendue,
+Et ge dis : Nuule port le bonhesr ne m’attnd.
+
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       2026-03-21 12:55:41
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  stat.csv
+        Pocet restartov:   20
+        Iteracie/restart:  40000
+        Celkom iteracii:   800000
+        T_start:           5.0
+        T_end:             0.005
+        Vaha bigramov:     1.0
+        Vaha trigramov:    2.0
+        Finalne skore:     -8579.7
+        

@@ -1,0 +1,39 @@
+Soufent sul ra contazne, x r’ochle mu fieux vppne,
+Au vouvpel mu soreir, tlistecent de c’ausiems ;
+De blocene au paswlm ces lezalms sul ra braine,
+Mont re tahreau vpanzeant se meloure x ces biems.
+Ivi zlonme re kreufe aux fazues evucantes ;
+Ir selbnnte, et s’enkonve en un rointain ohsvul ;
+Ra re rav icxoire et enm ses eaux melcantes
+Ou r’etoire mu soil se refe mans r’ajul.
+Au soccet me ves conts voulonnes me hois sochles,
+Re vlebusvure envol dette un melniel lagon ;
+Et re vpal faboleux me ra leine mes ochles
+Conte, et hranvit meda res holms me r’polijon.
+Vebenmanet, s’eranant me ra krevpe zotpique,
+Un son lerizieux se lebanm mans res ails ;
+Re fogazeul s’allete, et ra vrovpel lustique
+Aux melniels hluits mu doul cere me saints wonvelts.
+Cais a ves moux tahreaux con ace inmikklente
+N’ebloufe medant eux ni vpalca ni tlansblts ;
+De vontecbre ra telle ainsi qu’une ochle ellante
+Re soreir mes fifants n’evpaukke brus res colts.
+Me vorrine en vorrine en fain boltant ca fue,
+Mu sum a r’aquiron, me r’aulole au vouvpant,
+De balvouls tous res bxints me r’iccense etenmue,
+Et de mis : Nuure bolt re honpesl ne c’attnm.
+
+---
+Parametre behu
+--------------
+Datum a cas:       2026-03-21 22:55:24
+Metoda:            SA pokus 38
+Vstupny subor:     crypt.txt
+Frekvencny subor:  french_character_frequencies.csv
+Caesar posun:      13
+Caesar skore:      -52119.8
+Pocet restartov:   50
+Iteracie/restart:  100000
+T_start:           5.0
+T_end:             0.0005
+Finalne skore:     -45626.0

@@ -1,0 +1,43 @@
+Rauyent rui co mantogne, x c’ampie su yleux vhhne,
+Ou vauvhei su racelc, tilrtement de m’ourlesr ;
+De fiamene ou horbis mer iegoisr rui co fcolne,
+Sant ce topceou vhongeont re seiauce x mer flesr.
+Lvl gianse ce jceuye oux yoguer evumonter ;
+Lc reifnnte, et r’enjanve en un calntoln aprvui ;
+Co ce cov lmxalce et ens rer eoux seimonter
+Au c’etalce su rali re ceye sonr c’owui.
+Ou rammet se ver mantr vauianner se palr rampier,
+Ce viefurvuce envai dette un seinlei iozan ;
+Et ce vhoi yofaieux se co ielne ser ampier
+Mante, et pconvlt sedo cer paisr se c’hailwan.
+Vefensonet, r’econont se co jcevhe gathlque,
+Un ran ieclgleux re iefons sonr cer olir ;
+Ce yazogeui r’oiiete, et co vcavhei iurtlque
+Oux seinleir piultr su daui mece se rolntr banveitr.
+Molr o ver saux topceoux man ome lnsljjiente
+N’efiauye sedont eux nl vhoimo nl tionrfitr ;
+De vantemfce co teiie olnrl qu’une ampie eiionte
+Ce racelc ser ylyontr n’evhoujje fcur cer maitr.
+Se vacclne en vacclne en yoln faitont mo yue,
+Su rus o c’oqulcan, se c’ouiaie ou vauvhont,
+De foivauir taur cer fxlntr se c’lmmenre etensue,
+Et de slr : Nuuce fait ce panheri ne m’ottns.
+
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       2026-03-21 16:17:03
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  french_character_frequencies.csv
+        Pocet restartov:   30
+        Iteracie/restart:  60000
+        Celkom iteracii:   1800000
+        T_start:           5.0
+        T_end:             0.0005
+        Vaha bigramov:     1.0
+        Vaha trigramov:    2.0
+        Finalne skore:     -46196.6
+        Stats:             {'e': 15.1, 'a': 8.13, 's': 7.91, 't': 7.11, 'i': 6.94, 'r': 6.43, 'n': 6.42, 'u': 6.05, 'l': 5.68, 'o': 5.27, 'd': 3.55, 'm': 3.23, 'c': 3.15, 'p': 3.03, 'v': 1.83, 'h': 1.08, 'g': 0.97, 'f': 0.96, 'b': 0.93, 'q': 0.89, 'j': 0.71, 'x': 0.42, 'z': 0.21, 'y': 0.19, 'k': 0.16, 'w': 0.04}
+        Bigramy:           {'le': 0.026000000000000002, 'en': 0.0245, 'es': 0.024300000000000002, 'de': 0.0231, 're': 0.0206, 'ai': 0.0194, 'ou': 0.0192, 'nt': 0.0187, 'on': 0.0169, 'er': 0.013999999999999999, 'ur': 0.0138, 'an': 0.013300000000000001, 'it': 0.013300000000000001, 'te': 0.0129, 'et': 0.0128, 'me': 0.0123, 'la': 0.0123, 'is': 0.012199999999999999, 'qu': 0.0115, 'se': 0.0103, 'il': 0.01, 'ue': 0.0098, 'us': 0.0097, 'eu': 0.0095, 'co': 0.0095, 'ra': 0.0092, 'ne': 0.0091, 'in': 0.0089, 've': 0.0088, 'pa': 0.0087, 'ma': 0.0087, 'au': 0.0087, 'ar': 0.0084, 'ns': 0.008199999999999999, 'ch': 0.008199999999999999, 'ie': 0.008100000000000001, 'ti': 0.008, 'tr': 0.0079, 'ce': 0.0078000000000000005, 'em': 0.0077, 'un': 0.0076}
+        Trigramy:          {'ent': 0.014199999999999999, 'que': 0.010700000000000001, 'ait': 0.0092, 'les': 0.008100000000000001, 'lle': 0.0079, 'our': 0.0079, 'men': 0.0075, 'ais': 0.0066, 'est': 0.005699999999999999, 'tre': 0.005699999999999999, 'mai': 0.0053, 'ous': 0.0053, 'par': 0.0053, 'ant': 0.0052, 'ion': 0.0052, 'eme': 0.0051, 'tai': 0.005, 'ans': 0.005, 'pas': 0.0048, 'ell': 0.0048, 'vou': 0.004699999999999999, 'tou': 0.004699999999999999, 'pou': 0.0046, 'eur': 0.0045000000000000005, 'ont': 0.0045000000000000005, 'res': 0.0045000000000000005, 'dan': 0.0045000000000000005, 'une': 0.0044, 'ien': 0.0042, 'sur': 0.0042, 'son': 0.0040999999999999995, 'mme': 0.004, 'tio': 0.0039000000000000003, 'des': 0.0039000000000000003, 'ire': 0.0038, 'com': 0.0037, 'omm': 0.0037, 'ver': 0.0037, 'con': 0.0034999999999999996, 'che': 0.0034999999999999996, 'ave': 0.0034999999999999996, 'ain': 0.0034999999999999996, 'ure': 0.0034000000000000002, 'out': 0.0033, 'plu': 0.0032, 'cha': 0.0032, 'eux': 0.0031, 'ava': 0.0031, 'ouv': 0.003, 'nte': 0.003, 'lus': 0.003, 'fai': 0.003, 'ati': 0.003}
+        

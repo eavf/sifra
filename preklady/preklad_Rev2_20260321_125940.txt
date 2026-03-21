@@ -1,0 +1,40 @@
+Rauzent rui co lantojne, x c’alpie su zheux mvvne,
+Ou maumvei su racehc, tihrtelent de l’ourhesr ;
+De fialene ou voryis ler iejoisr rui co fcohne,
+Sant ce topceou mvonjeont re seiauce x ler fhesr.
+Hmh jianse ce gceuze oux zojuer emulonter ;
+Hc reifnnte, et r’enganme en un cahntohn aprmui ;
+Co ce com hlxahce et ens rer eoux seilonter
+Au c’etahce su rahi re ceze sonr c’okui.
+Ou rallet se mer lantr mauianner se pahr ralpier,
+Ce miefurmuce enmai dette un seinhei ioban ;
+Et ce mvoi zofaieux se co iehne ser alpier
+Lante, et pconmht sedo cer paisr se c’vaihkan.
+Mefensonet, r’econont se co gcemve jatvhque,
+Un ran iechjheux re iefons sonr cer ohir ;
+Ce zabojeui r’oiiete, et co mcamvei iurthque
+Oux seinheir piuhtr su daui lece se rohntr yanmeitr.
+Lohr o mer saux topceoux lan ole hnshggiente
+N’efiauze sedont eux nh mvoilo nh tionrfitr ;
+De mantelfce co teiie ohnrh qu’une alpie eiionte
+Ce racehc ser zhzontr n’emvougge fcur cer laitr.
+Se macchne en macchne en zohn faitont lo zue,
+Su rus o c’oquhcan, se c’ouiaie ou maumvont,
+De foimauir taur cer fxhntr se c’hllenre etensue,
+Et de shr : Nuuce fait ce panveri ne l’ottns.
+
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       2026-03-21 12:59:40
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  french_character_frequencies.csv
+        Pocet restartov:   20
+        Iteracie/restart:  40000
+        Celkom iteracii:   800000
+        T_start:           5.0
+        T_end:             0.005
+        Vaha bigramov:     1.0
+        Vaha trigramov:    2.0
+        Finalne skore:     -46185.3
+        

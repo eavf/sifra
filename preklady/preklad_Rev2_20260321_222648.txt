@@ -1,0 +1,39 @@
+Soufent sul ra contazne, x r’ochle mu fieux vppne,
+Au vouvpel mu soreir, tlistecent de c’ausiems ;
+De klocene au paswlm ces lezalms sul ra kraine,
+Mont re tahreau vpanzeant se meloure x ces kiems.
+Ivi zlonme re jreufe aux fazues evucantes ;
+Ir selknnte, et s’enjonve en un rointain ohsvul ;
+Ra re rav icxoire et enm ses eaux melcantes
+Ou r’etoire mu soil se refe mans r’abul.
+Au soccet me ves conts voulonnes me hois sochles,
+Re vlekusvure envol dette un melniel layon ;
+Et re vpal fakoleux me ra leine mes ochles
+Conte, et hranvit meda res holms me r’polibon.
+Vekenmanet, s’eranant me ra jrevpe zotpique,
+Un son lerizieux se lekanm mans res ails ;
+Re foyazeul s’allete, et ra vrovpel lustique
+Aux melniels hluits mu doul cere me saints wonvelts.
+Cais a ves moux tahreaux con ace inmijjlente
+N’ekloufe medant eux ni vpalca ni tlansklts ;
+De vonteckre ra telle ainsi qu’une ochle ellante
+Re soreir mes fifants n’evpaujje krus res colts.
+Me vorrine en vorrine en fain koltant ca fue,
+Mu sum a r’aquiron, me r’aulole au vouvpant,
+De kalvouls tous res kxints me r’iccense etenmue,
+Et de mis : Nuure kolt re honpesl ne c’attnm.
+
+---
+Parametre behu
+--------------
+Datum a cas:       2026-03-21 22:26:48
+Metoda:            SA pokus 11
+Vstupny subor:     crypt.txt
+Frekvencny subor:  french_character_frequencies.csv
+Caesar posun:      13
+Caesar skore:      -52119.8
+Pocet restartov:   30
+Iteracie/restart:  70000
+T_start:           5.0
+T_end:             0.0005
+Finalne skore:     -45626.0

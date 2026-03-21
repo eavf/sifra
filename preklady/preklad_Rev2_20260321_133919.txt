@@ -1,0 +1,40 @@
+Souvent sul ra montagne, x r’omwle du vieux chhne,
+Au couchel du soreir, tlistement pe m’ausieds ;
+Pe blomene au haszld mes legalds sul ra braine,
+Dont re tawreau changeant se deloure x mes bieds.
+Ici glonde re jreuve aux vagues ecumantes ;
+Ir selbnnte, et s’enjonce en un rointain owscul ;
+Ra re rac imxoire et end ses eaux delmantes
+Ou r’etoire du soil se reve dans r’aful.
+Au sommet de ces monts coulonnes de wois somwles,
+Re clebuscure encol pette un delniel layon ;
+Et re chal vaboleux de ra leine des omwles
+Monte, et wrancit depa res wolds de r’holifon.
+Cebendanet, s’eranant de ra jreche gothique,
+Un son lerigieux se leband dans res ails ;
+Re voyageul s’allete, et ra crochel lustique
+Aux delniels wluits du poul mere de saints zoncelts.
+Mais a ces doux tawreaux mon ame indijjlente
+N’eblouve depant eux ni chalma ni tlansblts ;
+Pe contembre ra telle ainsi qu’une omwle ellante
+Re soreir des vivants n’echaujje brus res molts.
+De corrine en corrine en vain boltant ma vue,
+Du sud a r’aquiron, de r’aulole au couchant,
+Pe balcouls tous res bxints de r’immense etendue,
+Et pe dis : Nuure bolt re wonhesl ne m’attnd.
+
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       2026-03-21 13:39:19
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  french_character_frequencies.csv
+        Pocet restartov:   20
+        Iteracie/restart:  50000
+        Celkom iteracii:   1000000
+        T_start:           5.0
+        T_end:             0.005
+        Vaha bigramov:     1.0
+        Vaha trigramov:    2.0
+        Finalne skore:     -45389.9
+        

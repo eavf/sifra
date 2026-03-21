@@ -1,0 +1,39 @@
+Souvent sur la montajne, x l’ombre du vieux chhne,
+Au coucher du soleil, tristement ge m’ausieds ;
+Ge promene au haszrd mes rejards sur la plaine,
+Dont le tableau chanjeant se deroule x mes pieds.
+Ici jronde le fleuve aux vajues ecumantes ;
+Il serpnnte, et s’enfonce en un lointain obscur ;
+La le lac imxoile et end ses eaux dermantes
+Ou l’etoile du soir se leve dans l’ayur.
+Au sommet de ces monts couronnes de bois sombres,
+Le crepuscule encor gette un dernier rakon ;
+Et le char vaporeux de la reine des ombres
+Monte, et blancit dega les bords de l’horiyon.
+Cependanet, s’elanant de la fleche jothique,
+Un son relijieux se repand dans les airs ;
+Le vokajeur s’arrete, et la clocher rustique
+Aux derniers bruits du gour mele de saints zoncerts.
+Mais a ces doux tableaux mon ame indiffrente
+N’eprouve degant eux ni charma ni transprts ;
+Ge contemple la terre ainsi qu’une ombre errante
+Le soleil des vivants n’echauffe plus les morts.
+De colline en colline en vain portant ma vue,
+Du sud a l’aquilon, de l’aurore au couchant,
+Ge parcours tous les pxints de l’immense etendue,
+Et ge dis : Nuule port le bonhesr ne m’attnd.
+
+        ---
+        Parametre behu
+        --------------
+        Datum a cas:       2026-03-21 23:01:56
+        Vstupny subor:     crypt.txt
+        Frekvencny subor:  stat.csv
+        Pocet restartov:   20
+        Iteracie/restart:  40000
+        Celkom iteracii:   800000
+        T_start:           5.0
+        T_end:             0.005
+        Finalne skore:     -8579.7
+        Stats:             {'a': 8.3, 'b': 1.3, 'c': 3.7, 'd': 4.3, 'e': 14.2, 'f': 1.3, 'g': 1.4, 'h': 1.3, 'i': 7.7, 'j': 0.4, 'k': 0.3, 'l': 5.8, 'm': 3.1, 'n': 7.5, 'o': 5.9, 'p': 2.9, 'q': 0.8, 'r': 7.1, 's': 7.6, 't': 6.9, 'u': 5.3, 'v': 1.3, 'w': 0.2, 'x': 0.4, 'y': 0.5, 'z': 0.2}
+        

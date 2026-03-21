@@ -1,0 +1,39 @@
+Souvent sur la montagne, x l’ombre du vieux chhne,
+Au coucher du soleil, tristement je m’ausieds ;
+Je promene au haszrd mes regards sur la plaine,
+Dont le tableau changeant se deroule x mes pieds.
+Ici gronde le fleuve aux vagues ecumantes ;
+Il serpnnte, et s’enfonce en un lointain obscur ;
+La le lac imxoile et end ses eaux dermantes
+Ou l’etoile du soir se leve dans l’akur.
+Au sommet de ces monts couronnes de bois sombres,
+Le crepuscule encor jette un dernier rayon ;
+Et le char vaporeux de la reine des ombres
+Monte, et blancit deja les bords de l’horikon.
+Cependanet, s’elanant de la fleche gothique,
+Un son religieux se repand dans les airs ;
+Le voyageur s’arrete, et la clocher rustique
+Aux derniers bruits du jour mele de saints zoncerts.
+Mais a ces doux tableaux mon ame indiffrente
+N’eprouve dejant eux ni charma ni transprts ;
+Je contemple la terre ainsi qu’une ombre errante
+Le soleil des vivants n’echauffe plus les morts.
+De colline en colline en vain portant ma vue,
+Du sud a l’aquilon, de l’aurore au couchant,
+Je parcours tous les pxints de l’immense etendue,
+Et je dis : Nuule port le bonhesr ne m’attnd.
+
+---
+Parametre behu
+--------------
+Datum a cas:       2026-03-21 23:45:03
+Metoda:            SA pokus 21
+Vstupny subor:     crypt.txt
+Frekvencny subor:  french_character_frequencies.csv
+Caesar posun:      13
+Caesar skore:      -45929.1
+Pocet restartov:   50
+Iteracie/restart:  100000
+T_start:           5.0
+T_end:             0.0005
+Finalne skore:     -36026.1
