@@ -264,7 +264,7 @@ os.makedirs(output_dir, exist_ok=True)
  
 from datetime import datetime
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-output_path = os.path.join(output_dir, f"preklad_{timestamp}.txt")
+output_path = os.path.join(output_dir, f"preklad_Rev2_{timestamp}.txt")
  
 with open(output_path, 'w', encoding='utf-8') as f:
     f.write(best_text)
