@@ -1,3 +1,8 @@
+Tu je príklad zo strednej školy, kde v zadaní bolo :
+* zašifrovaný text
+* tabuľku s frekvenciou jednotlivých písmen
+Základná otázka je či by bolo by možné dešifrovať ten text iba s frekvenčnou tabuľkou pre jednotlivé znaky, bez použitia bigramov a trigramov?
+
 Riešenie iba z frekvenčnou tabuľkou na jednotlivé znaky nie je moc možné ako samostatný algoritmus. Áno, bolo by to možné — ale s dôležitým "ale".
 
 **Samotná frekvenčná tabuľka nestačí na automatické dešifrovanie.** Dá sa ňou získať len **počiatočný odhad** mapovania (zoradíš písmená šifrovaného textu podľa frekvencie a priradíš ich k písmen referenčného jazyka). Problém je, že frekvencie mnohých písmen sú si veľmi blízke — napríklad `s`, `n`, `r`, `t`, `i` sú vo francúzštine všetky medzi 6–8 %, takže poradie nie je spoľahlivé a počiatočný odhad bude mať niekoľko zámien.
