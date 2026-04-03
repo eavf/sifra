@@ -1,4 +1,4 @@
-# Dešifrovanie substitučnej šifry — `decrypt_revised2.py`
+# Substitučná šifra — dešifrovanie a šifrovanie
 
 🇸🇰 Slovensky | 🇬🇧 [English](README.md) | 🇫🇷 [Français](README.fr.md)
 
@@ -39,7 +39,8 @@ Každé `a` v pôvodnom texte sa nahradí `r`, každé `b` sa nahradí `x` atď.
 
 | Súbor | Popis |
 |---|---|
-| `decrypt_revised2.py` | Hlavný skript |
+| `decrypt_revised2.py` | Hlavný dešifrovací skript |
+| `encrypt.py` | Šifrovací skript (monoalfabetická substitúcia) |
 | `crypt.txt` | Zašifrovaný vstupný text |
 | `french_character_frequencies.csv` | Frekvencia jednotlivých písmen vo francúzštine (26 písmen) |
 | `french_bigram_frequencies.csv` | Frekvencia bigramov vo francúzštine (~250 párov) |
@@ -54,12 +55,37 @@ Frekvenčné tabuľky pochádzajú z [sttmedia.com](https://www.sttmedia.com/cha
 
 ## Ako spustiť
 
+### Dešifrovanie
+
 ```bash
 python3 decrypt_revised2.py
 ```
 
 Všetky vstupné súbory musia byť v rovnakom adresári ako skript.
 Výsledok sa vypíše na konzolu a uloží do `preklady/preklad_Rev2_YYYYMMDD_HHMMSS.txt`.
+
+### Šifrovanie
+
+`encrypt.py` šifruje text rovnakým typom šifry (monoalfabetická substitúcia).
+
+```bash
+# Náhodný kľúč, interaktívny vstup
+python3 encrypt.py
+
+# Šifrovanie súboru náhodným kľúčom
+python3 encrypt.py -i vstup.txt -o sifra.txt
+
+# Šifrovanie vlastným 26-znakovým kľúčom (permutácia abecedy)
+python3 encrypt.py -i vstup.txt -k qwertyuiopasdfghjklzxcvbnm
+
+# Invertovanie dešifrovacieho mapovania z decrypt_revised2.py
+python3 encrypt.py --from-decrypt-map '{"a": "q", "b": "w", ...}'
+
+# Overenie správnosti (zašifruje a hneď dešifruje)
+python3 encrypt.py -i vstup.txt --verify
+```
+
+Kľúč je 26-znakový reťazec — permutácia abecedy, kde pozícia `i` určuje, čím sa nahradí `i`-te písmeno. Kľúč sa automaticky uloží vedľa výstupného súboru (`*_kluc.txt`).
 
 ---
 

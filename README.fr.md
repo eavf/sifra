@@ -1,4 +1,4 @@
-# Déchiffrement d'un chiffre par substitution — `decrypt_revised2.py`
+# Chiffre par substitution — déchiffrement et chiffrement
 
 🇸🇰 [Slovensky](README.sk.md) | 🇬🇧 [English](README.md) | 🇫🇷 Français
 
@@ -39,7 +39,8 @@ Chaque `a` devient `r`, chaque `b` devient `x`, etc. Le résultat ressemble à d
 
 | Fichier | Description |
 |---|---|
-| `decrypt_revised2.py` | Script principal |
+| `decrypt_revised2.py` | Script principal de déchiffrement |
+| `encrypt.py` | Script de chiffrement (substitution monoalphabétique) |
 | `crypt.txt` | Texte chiffré en entrée |
 | `french_character_frequencies.csv` | Fréquences des lettres en français (26 lettres) |
 | `french_bigram_frequencies.csv` | Fréquences des bigrammes en français (~250 paires) |
@@ -54,12 +55,37 @@ Les tables de fréquences proviennent de [sttmedia.com](https://www.sttmedia.com
 
 ## Comment exécuter
 
+### Déchiffrement
+
 ```bash
 python3 decrypt_revised2.py
 ```
 
 Tous les fichiers d'entrée doivent se trouver dans le même répertoire que le script.
 Le résultat est affiché dans la console et sauvegardé dans `preklady/preklad_Rev2_YYYYMMDD_HHMMSS.txt`.
+
+### Chiffrement
+
+`encrypt.py` chiffre un texte avec le même type de chiffre (substitution monoalphabétique).
+
+```bash
+# Clé aléatoire, saisie interactive
+python3 encrypt.py
+
+# Chiffrer un fichier avec une clé aléatoire
+python3 encrypt.py -i entree.txt -o chiffre.txt
+
+# Chiffrer avec une clé spécifique de 26 lettres (permutation de l'alphabet)
+python3 encrypt.py -i entree.txt -k qwertyuiopasdfghjklzxcvbnm
+
+# Inverser une correspondance de déchiffrement issue de decrypt_revised2.py
+python3 encrypt.py --from-decrypt-map '{"a": "q", "b": "w", ...}'
+
+# Vérifier le bon fonctionnement (chiffre puis déchiffre et compare)
+python3 encrypt.py -i entree.txt --verify
+```
+
+La clé est une chaîne de 26 caractères — une permutation de l'alphabet où la position `i` détermine le remplacement de la `i`-ème lettre. La clé est automatiquement sauvegardée à côté du fichier de sortie (`*_kluc.txt`).
 
 ---
 

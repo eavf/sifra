@@ -1,4 +1,4 @@
-# Substitution Cipher Decryption — `decrypt_revised2.py`
+# Substitution Cipher — Decryption & Encryption
 
 🇸🇰 [Slovensky](README.sk.md) | 🇬🇧 English | 🇫🇷 [Français](README.fr.md)
 
@@ -39,7 +39,8 @@ Every `a` becomes `r`, every `b` becomes `x`, etc. The result looks random, but 
 
 | File | Description |
 |---|---|
-| `decrypt_revised2.py` | Main script |
+| `decrypt_revised2.py` | Main decryption script |
+| `encrypt.py` | Encryption script (monoalphabetic substitution) |
 | `crypt.txt` | Encrypted input text |
 | `french_character_frequencies.csv` | French single-letter frequencies (26 letters) |
 | `french_bigram_frequencies.csv` | French bigram frequencies (~250 pairs) |
@@ -54,12 +55,37 @@ Frequency tables sourced from [sttmedia.com](https://www.sttmedia.com/characterf
 
 ## How to Run
 
+### Decryption
+
 ```bash
 python3 decrypt_revised2.py
 ```
 
 All input files must be in the same directory as the script.
 The result is printed to the console and saved to `preklady/preklad_Rev2_YYYYMMDD_HHMMSS.txt`.
+
+### Encryption
+
+`encrypt.py` encrypts text using the same cipher type (monoalphabetic substitution).
+
+```bash
+# Random key, interactive input
+python3 encrypt.py
+
+# Encrypt a file with a random key
+python3 encrypt.py -i input.txt -o encrypted.txt
+
+# Encrypt with a specific 26-letter key (alphabet permutation)
+python3 encrypt.py -i input.txt -k qwertyuiopasdfghjklzxcvbnm
+
+# Invert a decryption mapping from decrypt_revised2.py
+python3 encrypt.py --from-decrypt-map '{"a": "q", "b": "w", ...}'
+
+# Verify correctness (encrypts then decrypts and compares)
+python3 encrypt.py -i input.txt --verify
+```
+
+The key is a 26-character string — a permutation of the alphabet where position `i` specifies the replacement for the `i`-th letter. The key is automatically saved alongside the output file (`*_kluc.txt`).
 
 ---
 
